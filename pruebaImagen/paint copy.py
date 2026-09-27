@@ -1,5 +1,5 @@
 nom_fitxer = "Prueba.bmp"
-valor_vermell = 79
+valor_vermell = 72
 # Obrim el fitxer en mode binari de lectura (`rb`)
 with open(nom_fitxer, "rb") as f:
     # Saltem els 1078 bytes de capçalera del fitxer BMP
