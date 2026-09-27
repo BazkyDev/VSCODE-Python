@@ -9,7 +9,7 @@ def es_primo(numero):
     return True
 
 
-numero = 28
+numero = 7
 print(f"¿El número {numero} es primo? {es_primo(numero)}")
 
 
