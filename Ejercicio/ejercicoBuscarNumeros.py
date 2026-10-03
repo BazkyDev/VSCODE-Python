@@ -1,27 +1,49 @@
+
+import threading
+contador = 0
+
 def es_primo(numero):
     if numero < 2:
         return False
 
-    for i in range(2, numero):
+    for i in range(2, numero -1):
         if numero % i == 0:
             return False
 
     return True
 
 
-numero = 28
-print(f"¿El número {numero} es primo? {es_primo(numero)}")
 
 
 
-def llistaPrimer(*args):
-    numeroInicial = args[0]
-    numeroFinal = args[1]
+
+def buscaNP(*args):
+    
+    inicio = args[0]
+    fin = args[1]
+
+    for n in range(inicio, fin):
+        if es_primo(n):
+            global contador
+            contador += 1
+            print(n, "es primo")
+
+           
 
 
 
-    #(2,25000)
-    #(25000, 50000)
+
+f1 = threading.Thread ( target=buscaNP, args=( 2, 25000))
+f2 = threading.Thread ( target=buscaNP, args=( 25001, 50000))
+
+f1.start()
+f2.start()
+f1.join()
+f2.join()
+
+print(contador)
+
+
 
 
 
