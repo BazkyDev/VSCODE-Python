@@ -1,4 +1,5 @@
 import threading
+
 def mostrarllista():
     for i in range(10):
         print(i)
@@ -6,7 +7,7 @@ def mostrarllista():
 
 hilo = threading.Thread ( target=mostrarllista)
 hilo.start()
-hilo.join
+hilo.join()
 print('final')
 
     
